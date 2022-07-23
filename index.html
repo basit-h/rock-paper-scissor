@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock | Paper | Scissor</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 300;
+                font-size: 62.5%;
+            }
+            .btn{
+                cursor: pointer;
+                padding: 1rem 2.5rem;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                background-color: #77ad33;
+                color: #fff;
+                letter-spacing: 2px;
+                transition: all .2s;
+            }
+            .btn:hover{
+                animation: btn-animation .5s forwards ease-in-out;
+                /* animation-iteration-count: infinite; */
+            }
+            .btn:hover :not(.btn:hover){
+                display: none;
+            }
+            @keyframes btn-animation{
+                0%{
+                    transform: translateY(-.3rem) scale(1.02);
+                    opacity: .5;
+                }
+                50%{
+                    transform: scale(1.01);
+                }
+                80%{
+                    transform: scale(1.02);
+                }
+                100%{
+                    transform: translate(0) scale(1);
+                    opacity: 1;
+                }
+            }
+            .container{
+                background: linear-gradient(to right bottom, #77ad33, #44dd33);
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .row{
+                background-color: rgba(255,255,255,.8);
+                padding: 2rem;
+                border-radius: 5px;
+                
+                text-align: center;
+            }
+            .row h2{
+                font-size: 2.2rem;
+                font-weight: 500;
+                background-image: linear-gradient(to right bottom, #77ad33, #44dd33);
+                -webkit-background-clip: text;
+                color: transparent;
+                display: flex;
+                justify-content: space-between;      
+                margin-bottom: 1rem;
+            }
+            .row h2 span{
+                font-size: 1.8rem; 
+                font-weight: 300;
+                color : #333;
+                border-bottom: 2px solid green;
+            }
+
+            hr{
+                margin: 1rem 0;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h2>Computer's Choice &rarr; <span id="computer-choice"></span></h2>
+                <h2>User's Choice &rarr;<span id="user-choice"></span></h2>
+                <h2 id="result"></h2>
+                <hr />
+                <button class="btn" id="rock">ROCK</button>
+                <button class="btn" id="paper">PAPER</button>
+                <button class="btn" id="scissor">SCISSOR</button>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
